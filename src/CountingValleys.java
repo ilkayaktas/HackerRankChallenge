@@ -8,12 +8,16 @@ public class CountingValleys {
 
         int numOfValleys = 0;
         int rakim = 0;
-        for (String str :  s.split("")){
-            System.out.println(str);
-            if(str.equals("U"))rakim++;
-            if(str.equals("D"))rakim--;
 
-            if(rakim == 0 && str.equals("U")){
+        for (int i = 0; i < s.length(); i++) {
+            char str = s.charAt(i);
+            if (str == 'U') {
+                rakim++;
+            } else {
+                rakim--;
+            }
+
+            if(rakim == 0 && str ==  'U'){
                 numOfValleys++;
             }
         }
