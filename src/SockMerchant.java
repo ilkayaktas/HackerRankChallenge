@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -10,12 +10,8 @@ import java.util.stream.Collectors;
 public class SockMerchant {
 
     static int sockMerchant(int n, int[] ar) {
-        List<Integer> list = new ArrayList();
-        for (int i = 0; i < ar.length; i++) {
-            list.add(ar[i]);
-        }
 
-        Map<Integer, List<Integer>> map = list.stream().sorted().collect(Collectors.groupingBy(o->o ));
+        Map<Integer, List<Integer>> map = Arrays.stream(ar).boxed().sorted().collect(Collectors.groupingBy(o->o ));
 
         int total = 0;
         for (Integer i : map.keySet()){

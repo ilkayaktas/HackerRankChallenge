@@ -4,25 +4,48 @@
 
 public class MinimumSwaps {
 
+    static int counter = 0;
+
     static int minimumSwaps(int[] arr) {
 
-        int swapCount = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i] > (i+1)){
-                for (int j = i+1; j < arr.length; j++) {
-                    if (arr[j] < (j+1)){
-                        int tmp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = tmp;
-                        swapCount++;
+        quickSort(arr, 0, arr.length-1);
 
-
-                        break;
-                    }
-                }
-            }
-        }
-        return  swapCount;
+        return counter;
     }
 
+    static void quickSort(int[] arr, int low, int high){
+        if (low < high)
+        {
+
+            int pi = divideAndConquare(arr, low, high);
+
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    static int divideAndConquare(int[] arr, int low, int high)
+    {
+        int pivot = arr[high];
+
+        int i = (low - 1);
+
+        for (int j = low; j <= high- 1; j++)
+        {
+            if (arr[j] <= pivot)
+            {
+                i++;
+                int tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+                counter++;
+            }
+        }
+        int tmp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = tmp;
+        counter++;
+
+        return (i + 1);
+    }
 }
