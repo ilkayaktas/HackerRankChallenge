@@ -11,15 +11,20 @@ public class Java1DArrayTest {
     public void canWin() {
 
         assertTrue(Java1DArray.canWin(5, new int[]{0,0,1,1,0,0,0,1,1,0,0,1,1,1,0,1}));
+        assertTrue(Java1DArray.canWin(5, new int[]{0,1,0,0,0,0,1,0,1,1,1,0}));
 
         assertTrue(Java1DArray.canWin(3, new int[]{0, 0, 0, 0, 0}));
         assertTrue(Java1DArray.canWin(5, new int[]{0, 0, 0, 1, 1, 1}));
         assertFalse(Java1DArray.canWin(3, new int[]{0, 0, 1, 1, 1, 0}));
-  //      assertFalse(Java1DArray.canWin(1, new int[]{0, 1, 0}));
+        assertFalse(Java1DArray.canWin(1, new int[]{0, 1, 0}));
 
-  //      assertTrue(Java1DArray.canWin(5, new int[]{0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1}));
-  //      assertTrue(Java1DArray.canWin(5, new int[]{0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1}));
-  //      assertFalse(Java1DArray.canWin(5, new int[]{0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1}));
+        assertTrue(Java1DArray.canWin(5, new int[]{0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1}));
+        assertTrue(Java1DArray.canWin(5, new int[]{0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1}));
+        assertFalse(Java1DArray.canWin(5, new int[]{0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1}));
+        assertTrue(Java1DArray.canWin(39, new int[]{0,0,1,1,0,0,1,1,0,1,1,1,1,1,1,1,0,0,0,1,0,0,1,1,1,1,0,1,0,1,1,1,1,1,0,0,1,0,1,0}));
+        assertTrue(Java1DArray.canWin(34, new int[]{0,0,1,1,0,0,0,0,0,1,1,1,0,0,1,1,1,1,0,0,0,1,0,1,1,1,1,1,0,1,1,0,1,1,0,0,0,1,1,1,0}));
+        assertTrue(Java1DArray.canWin(77, new int[]{0,0,1,1,0,1,1,1,1,0,0,1,1,1,1,0,1,0,0,0,1,0,0,1,0,1,1,1,1,1,0,1,1,0,0,0,1,1,0,1,0,1,1,1,1,0,1,1,1,0,0,0,1,0,1,1,1,0,1,1,0,1,0,1,1,1,1,1,1,0,1,1,1,0,1,1,1,1,0,0,1,1,1,0,1,1,0,1,0,1,1,1,1,1,1,0}));
+        assertFalse(Java1DArray.canWin(24, new int[]{0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,1,1,1,0,1,1,1}));
     }
 }
 
