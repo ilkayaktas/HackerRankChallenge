@@ -5,17 +5,16 @@
 public class MakingAnagrams {
     // Complete the makeAnagram function below.
     static int makeAnagram(String a, String b) {
-        String k = a;
-        String t = b;
-        String[] s = a.split("");
+        String originalA = a;
+        String originalB = b;
         int counter = 0;
-        for (int i = 0; i < s.length; i++) {
-            if(b.contains(s[i])){
-                b.replace(s[i],"");
-                a.replace(s[i],"");
-                counter+=2;
+        for (String s1 : a.split("")) {
+            if (b.contains(s1)) {
+                b = b.replaceFirst(s1, "");
+                a = a.replaceFirst(s1, "");
+                counter += 2;
             }
         }
-        return k.length()+t.length()-counter;
+        return originalA.length()+originalB.length()-counter;
     }
 }
