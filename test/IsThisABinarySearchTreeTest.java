@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by ilkayaktas on 2018-12-20 at 00:04.
@@ -9,6 +9,7 @@ public class IsThisABinarySearchTreeTest {
 
     @Test
     public void checkBST() {
+
         int [] arr = new int[]{10, 11, 3, 8, 6, 7};
         int t = arr.length;
         Node root = null;
